@@ -1,0 +1,12 @@
+{
+  "DiscountPlugin": {
+    "name": "discount",
+    "description": "user would be able to receive discounts if this plugin is enabled. this is a paid plugin",
+    "enabled": false
+  },
+  "WishListPlugin": {
+    "name": "wish-list",
+    "description": "user can make wish list if this plugin is enabled",
+    "enabled": false
+  }
+}
