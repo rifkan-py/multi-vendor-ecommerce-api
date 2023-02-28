@@ -1,12 +1,13 @@
-import express from "express";
+const express = require("express");
 
-import UserController from "../controllers/UserController.js";
-import UserRepository, {
+const UserController = require("../controllers/UserController.js");
+const {
   HashService,
   TokenService,
-} from "../repositories/UserRepository.js";
+  UserRepository,
+} = require("../repositories/UserRepository.js");
 
-import UserService from "../services/UserService.js";
+const UserService = require("../services/UserService.js");
 
 const userRepository = new UserRepository();
 const hashService = new HashService();
@@ -26,4 +27,4 @@ router.post("/test", (req, res, _) => {
   res.json("route working");
 });
 
-export default router;
+module.exports = router;

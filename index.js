@@ -1,8 +1,10 @@
-import dotenv from "dotenv";
-import express from "express";
-import connectDB from "./src/config/connectDB.js";
-import errorHandler from "./src/middleware/errorHandler.js";
-import userRoute from "./src/routes/userRoute.js";
+const fs = require("fs");
+const path = require("path");
+const dotenv = require("dotenv");
+const express = require("express");
+const connectDB = require("./src/config/connectDB.js");
+const errorHandler = require("./src/middleware/errorHandler.js");
+const userRoute = require("./src/routes/userRoute.js");
 
 dotenv.config();
 
@@ -12,6 +14,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 connectDB();
+
+// function loadEnabledPlugins() {
+//   const pluginConfig = fs.readFile(path.join(__dirname, "plugins.json"));
+//   console.log(pluginConfig);
+// }
+
+// loadEnabledPlugins();
 
 app.use("/api/v1/user", userRoute);
 

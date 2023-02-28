@@ -1,6 +1,5 @@
 {
   "name": "auth-system",
-  "type": "module",
   "version": "1.0.0",
   "description": "auth system to implement SOLID best practices",
   "main": "index.js",
