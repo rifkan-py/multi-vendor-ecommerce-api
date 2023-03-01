@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 function authenticate(req, res, next) {
   try {
-    const token = req.headers.authorization?.split(" ")[0];
+    const token = req.headers.authorization?.split(" ")[1];
     if (!token) {
       res.statusCode = 403;
       throw new Error("Authorization denied.");
