@@ -4,6 +4,8 @@ const connectDB = require("./src/config/connectDB");
 const errorHandler = require("./src/middleware/errorHandler");
 const userRoute = require("./src/routes/userRoute");
 const productRoute = require("./src/routes/productRoute");
+const pluginRoute = require("./src/routes/pluginRoute");
+const injectPlugins = require("./src/middleware/injectPlugins");
 
 dotenv.config();
 
@@ -16,6 +18,9 @@ connectDB();
 
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/products", productRoute);
+app.use("/api/v1/plugins", pluginRoute);
+
+app.use(injectPlugins);
 
 app.use(errorHandler);
 
