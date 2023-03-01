@@ -2,7 +2,7 @@ class ProductController {
   constructor(productService) {
     this.productService = productService;
     this.createProduct = this.createProduct.bind(this);
-    this.login = this.login.bind(this);
+    this.getAllProducts = this.getAllProducts.bind(this);
   }
   async createProduct(req, res, next) {
     const { name, description, stock, images } = req.body;

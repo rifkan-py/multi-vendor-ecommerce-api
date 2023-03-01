@@ -1,6 +1,6 @@
 const Product = require("../models/Product");
 
-class UserRepository {
+class ProductRepository {
   async create(user) {
     const product = await Product.create(user);
     return product;
@@ -12,4 +12,4 @@ class UserRepository {
   }
 }
 
-module.exports = UserRepository;
+module.exports = ProductRepository;
